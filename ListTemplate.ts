@@ -11,7 +11,7 @@ class NodeElement
 
   toString() : string
   {
-    return "|Key: "+this.key+"| |Value: "+this.value+"|";
+    return "|Key: "+this.key+" Value: "+this.value+"|";
   }
 }
 
@@ -60,7 +60,7 @@ class ListElement
   toString() : string
   {
     var temp = "";
-    for(var i = this.head ; i != null ; i = i.next) temp += i.toString() + " ";
+    for(var i = this.head ; i != null ; i = i.next) temp += i.toString() + "->";
     return temp;
   }
 
