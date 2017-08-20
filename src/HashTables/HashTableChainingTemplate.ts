@@ -54,6 +54,14 @@ class HashTable
     return this.container[index].get(key);
   }
 
+  contains(key : string) : boolean
+  {
+    var index = this.hash(key);
+    if(this.container[index] == null) return false;
+    else if(this.container[index].contains(key)) return true;
+    return false; 
+  }
+
   toString() : string
   {
     var temp : string = "";
