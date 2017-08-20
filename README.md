@@ -12,11 +12,13 @@ A TypeScript implementation of the various data structures.
   1. SinglyLinkedList
 
 
-Requires TypeScript to be installed on host system. [Instructions](https://www.typescriptlang.org/index.html#download-links)
 
 ### Usage
 1. Run `make all` to make all data structures' js files
 2. Add to html as javascript src file
+
+Requires TypeScript to be installed on host system. [Instructions](https://www.typescriptlang.org/index.html#download-links)
+
 
 
 
