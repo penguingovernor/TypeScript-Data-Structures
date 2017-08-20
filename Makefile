@@ -1,18 +1,26 @@
+HASHSRC = src/HashTables
+LISTSRC = src/LinkedLists
+
 .PHONY:	all clean
 
-all: concat
+all:	LinkedLists HashTables
 
-concat: ListTemplate.js HashTableTemplate.js
-	@touch HashTable.js
-	@cat ListTemplate.js >> HashTable.js
-	@cat HashTableTemplate.js >> HashTable.js
-	@rm ListTemplate.js HashTableTemplate.js
+# HashTable Categories
 
-ListTemplate.js:	ListTemplate.ts
-	@tsc ListTemplate.ts
+HashTables:	HashTableChaining.js
 
-HashTableTemplate.js: HashTableTemplate.ts
-	@tsc HashTableTemplate.ts
+HashTableChaining.js:	$(HASHSRC)/HashTableChainingTemplate.ts SinglyLinkedList.js
+	@tsc $(HASHSRC)/HashTableChainingTemplate.ts --outFile ./HashTableChaining.js
 
+
+
+# Linked Lists Category
+
+LinkedLists:	SinglyLinkedList.js
+
+SinglyLinkedList.js:	$(LISTSRC)/SinglyLinkedListTemplate.ts
+	@tsc $(LISTSRC)/SinglyLinkedListTemplate.ts --outFile ./SinglyLinkedList.js
+
+# Utilities 
 clean:
-	@rm -f *.js
+	@rm *.js
