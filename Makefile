@@ -7,10 +7,13 @@ all:	LinkedLists HashTables
 
 # HashTable Categories
 
-HashTables:	HashTableChaining.js
+HashTables:	HashTableChaining.js HashTableOpenAdressing.js
 
-HashTableChaining.js:	$(HASHSRC)/HashTableChainingTemplate.ts SinglyLinkedList.js
-	@tsc $(HASHSRC)/HashTableChainingTemplate.ts --outFile ./HashTableChaining.js
+HashTableChaining.js:	$(HASHSRC)/HashTableChainingTemplate.ts $(LISTSRC)/SinglyLinkedListTemplate.ts
+	@tsc $(HASHSRC)/HashTableChainingTemplate.ts --outFile ./out/HashTableChaining.js
+
+HashTableOpenAdressing.js:	$(HASHSRC)/HashTableOpenAdressingTemplate.ts
+	@tsc $(HASHSRC)/HashTableOpenAdressingTemplate.ts --outFile ./out/HashTableOpenAdressing.js
 
 
 
@@ -19,8 +22,8 @@ HashTableChaining.js:	$(HASHSRC)/HashTableChainingTemplate.ts SinglyLinkedList.j
 LinkedLists:	SinglyLinkedList.js
 
 SinglyLinkedList.js:	$(LISTSRC)/SinglyLinkedListTemplate.ts
-	@tsc $(LISTSRC)/SinglyLinkedListTemplate.ts --outFile ./SinglyLinkedList.js
+	@tsc $(LISTSRC)/SinglyLinkedListTemplate.ts --outFile ./out/SinglyLinkedList.js
 
-# Utilities 
+# Utilities
 clean:
-	@rm *.js
+	@rm -rf out
