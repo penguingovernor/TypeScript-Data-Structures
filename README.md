@@ -11,6 +11,8 @@ A TypeScript implementation of the various data structures.
 * Linked Lists
   1. SinglyLinkedList
 
+* Stacks
+  1. Array-based Stacks
 
 
 ### Usage
@@ -91,6 +93,22 @@ list.get("Burger");
 
 //Printing map as string
 list.toString();
+
+/**
+ * This section refers to  the stack data structure
+ */
+
+// Declaration
+var stack = new ListElement();
+
+//Pusing
+stack.push( "soomethin" ) //Any data type will work
+
+//Popping
+var string = a.pop();
+
+//Printing stack as string
+stack.toString();
 
 
 ```
